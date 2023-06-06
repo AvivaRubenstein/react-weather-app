@@ -2,6 +2,7 @@ import React, { useState }from 'react';
 import TodaysForecast from './TodaysForecast';
 import WeatherData from './WeatherData';
 import { v4 as uuid } from 'uuid';
+require('../style.css');
 
 function SearchCard() {
   
@@ -77,7 +78,7 @@ function SearchCard() {
               <input id = "searchInput" type="text" className="form-control" placeholder="Search" aria-label="Search term"
                 aria-describedby="basic-addon2"
                 onChange={(e) => setSearchTerm(e.target.value)}/>
-              <button type="submit" className="btn btn-primary" onClick={() => getCoordinates()}>Submit</button>
+              <button type="submit" className="btn btn-primary" id="search-btn" onClick={() => getCoordinates()}>Submit</button>
               <div id ="search-history-box">
                 {searchHistory && searchHistory.length > 0 && 
                 searchHistory.map((pastSearch) => (
@@ -91,17 +92,16 @@ function SearchCard() {
         </div>
       </div>
       {weatherData.list? (
-        // <h2>{weatherData.list[0].main.temp}</h2>
         <TodaysForecast data={weatherData}/>
       ) :(
-        <h5>Make a search to see today's forecast!</h5>
+        <h5> </h5>
       )}
       </div>
       {weatherData.list? (
         <WeatherData data={weatherData}/>
       ):
       (
-        <h6>Search for a city to see the 5-day forecast!</h6>
+        <h6> </h6>
       )}
       
       </div>

@@ -8,6 +8,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.css';
+require('./style.css');
 
 // TODO: Add a comment describing the significance of the ReactDOM.render method
 // ReactDOM.render takes a React component, or tree of React components and (eventually) renders them to the DOM.

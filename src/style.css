@@ -1,7 +1,8 @@
 #todays-forecast{
     text-align: center;
-    border: 1px solid blue;
+    border: 1px solid #84C0C6;
     border-radius: 20px;
+    background-color: #BAE1E5;
 }
 .dayBoxes{
 text-align: center;
@@ -10,4 +11,21 @@ border-radius: 20px;
 }
 .heading {
 text-align: center;
+margin-top: 30px;
+}
+.history-btns {
+    border-radius: 30px;
+}
+#search-btn {
+    border-radius: 30px;
+    background-color: #05668D;
+}
+#search-box {
+    background-color: #F1DEDE;
+}
+#nav {
+    background-color: #05668D;
+}
+#nav-text {
+    color: white;
 }
