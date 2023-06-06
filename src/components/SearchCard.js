@@ -7,7 +7,7 @@ function SearchCard() {
   
     const [searchTerm, setSearchTerm] = useState("");
     const [searchHistory, setSearchHistory] = useState([]);
-    const [weatherData, setWeatherData] = useState({})
+    const [weatherData, setWeatherData] = useState({});
     //getCoordinates takes the user's search term and makes an API call to retrieve the longitude and latitude for that location
     //then, it calls the getForecast() function, passing in the lat and longitude - this function will retrieve the appropriate weather data
     //the handleSearchHistory() function is also called here, adding the current searchTerm to the searchHistory 
@@ -43,7 +43,7 @@ function SearchCard() {
         const data = await response.json();
         console.log(data.list);
         console.log(data);
-        setWeatherData({});
+        //setWeatherData({});
         setWeatherData(data);
         console.log(weatherData)
       } catch (error) {
@@ -91,8 +91,8 @@ function SearchCard() {
         </div>
       </div>
       {weatherData.list? (
-        <h2>{weatherData.list[0].main.temp}</h2>
-        // <TodaysForecast data={weatherData}/>
+        // <h2>{weatherData.list[0].main.temp}</h2>
+        <TodaysForecast data={weatherData}/>
       ) :(
         <h5>Make a search to see today's forecast!</h5>
       )}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodaysForecast(data) {
+function TodaysForecast({data}) {
     let today = data.list[0];
     let cityName = data.city.name;
   
