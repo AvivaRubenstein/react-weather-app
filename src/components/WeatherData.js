@@ -1,22 +1,27 @@
 import React from 'react';
 
-// TODO: Add a comment explaining what a react component is
-// Components are responsible for rendering some part of an application's UI.
-// Components let us split the UI into independent, reusable pieces, and also think about each piece in isolation.
-function Day(result) {
-  let data = result.list.slice(0, 6);
+function Day({result}) {
+  let data;
+  console.log(result)
+  if(result.list.length){
+    data = result.list.slice(0, 6);
+    console.log(data);
+  }
+  
 
   return (
+   
   <div>
-    {data && data.length > 0 && data.map((day) => (
-  <div class="card dayBoxes">
-    <div class="card-body " id = "day0">
+     <h2>Hello</h2>
+    {data && data.length > 0 && data.map((day, index) => (
+  <div className="card dayBoxes">
+    <div className="card-body " id={"day-" + index}>
       
-    <h3 id = "today-date0">placeholder</h3> 
-    <img id = "today-image0"/>
-    <h5 id = "today-temp0">placeholder</h5>
-    <h5 id = "today-humidity0">placeholder</h5>
-    <h5 id = "today-wind-speed0">placeholder</h5>
+    <h3 id ={"today-date-" + index}>{day.dt_txt.split(" ")[0]}</h3> 
+    <img id ={"today-image-" + index} alt="weather-icon" src={"https://openweathermap.org/img/w/" + day.weather[0].icon + ".png"}/>
+    <h5 id ={"today-temp-" + index}>Temperature: {day.main.temp} degrees</h5>
+    <h5 id ={"today-humidity-" + index}>Humidity: {day.main.humidity} %</h5>
+    <h5 id ={"today-wind-speed-" + index}>Wind Speed: {day.wind.speed} MPH</h5>
     </div>
   </div>
     ))}
@@ -24,16 +29,14 @@ function Day(result) {
     
   );
 }
-function WeatherData(weatherData) {
+function WeatherData({data}) {
   
   return (
-      <div class="row">
-        <div class="col">
+      <div className="row">
+        <div className="col">
 
           <h3>5 Day Forecast:</h3>
-{weatherData.length > 0  &&
-  <Day data={weatherData}/>
-}
+  <Day result={data}/>
           </div>
           </div>
 

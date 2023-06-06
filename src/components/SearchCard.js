@@ -98,8 +98,7 @@ function SearchCard() {
       )}
       </div>
       {weatherData.list? (
-        // <WeatherData data={weatherData}/>
-        <h2>{weatherData.list[0].main.temp}</h2>
+        <WeatherData data={weatherData}/>
       ):
       (
         <h6>Search for a city to see the 5-day forecast!</h6>
