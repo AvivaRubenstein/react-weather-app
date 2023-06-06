@@ -3,22 +3,23 @@ require('../style.css')
 
 //trims the data from the API to only include today and next 5 days
 //maps through each of the days in the 5-day forecast and displays relevant weather data onto the page
-function Days({result}) {
-  let data = [];
-  console.log(result)
-  if(result.list.length){
+function WeatherData({data}) {
+  let d = [];
+  console.log(data)
+  if(data.list.length){
     let array = 6;
-    for(let i=0; i < 6 && array < result.list.length; i++){
-      data.push(result.list[array])
+    for(let i=0; i < 6 && array < data.list.length; i++){
+      d.push(data.list[array])
       array += 8;
     }
-    console.log(data);
+    console.log(d);
   }
-  
   return (
-   
-  <div>
-    {data && data.length > 0 && data.map((day, index) => (
+      <div className="row">
+        <div className="col">
+
+          <h3 className="heading">5 Day Forecast:</h3>
+  {d && d.length > 0 && d.map((day, index) => (
   <div className="card dayBoxes">
     <div className="card-body" id={"day-" + index}>
     <h3 id ={"today-date-" + index}>{day.dt_txt.split(" ")[0]}</h3> 
@@ -29,19 +30,6 @@ function Days({result}) {
     </div>
   </div>
     ))}
-    </div>
-    
-  );
-}
-//function to display container of 5-day forecast data
-function WeatherData({data}) {
-  
-  return (
-      <div className="row">
-        <div className="col">
-
-          <h3>5 Day Forecast:</h3>
-  <Days result={data}/>
           </div>
           </div>
 

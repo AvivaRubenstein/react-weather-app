@@ -1,8 +1,13 @@
 #todays-forecast{
     text-align: center;
+    border: 1px solid blue;
+    border-radius: 20px;
 }
 .dayBoxes{
 text-align: center;
+border: 1px solid aquamarine;
 border-radius: 20px;
-border-color: aquamarine;
+}
+.heading {
+text-align: center;
 }
