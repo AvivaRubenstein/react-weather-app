@@ -1,13 +1,25 @@
+:root {
+    --dark-blue : #05668D;
+    --medium-blue: #4593AA;
+    --light-blue: #84C0C6;
+    --grey-blue: #7BA2B6;
+    --mint-blue: #BAE1E5;
+    --pale-pink: #F1DEDE;
+    --med-pink: #D9A698;
+    --pink-brown: #C06E52;
+}
 #todays-forecast{
     text-align: center;
-    border: 1px solid #84C0C6;
+    border: 1px solid var(--light-blue);
     border-radius: 20px;
-    background-color: #BAE1E5;
+    background-color: var(--mint-blue);
 }
 .dayBoxes{
 text-align: center;
-border: 1px solid aquamarine;
+border: 1px solid var(--medium-blue);
 border-radius: 20px;
+background-color: var(--light-blue);
+margin: 25px;
 }
 .heading {
 text-align: center;
@@ -18,13 +30,14 @@ margin-top: 30px;
 }
 #search-btn {
     border-radius: 30px;
-    background-color: #05668D;
+    background-color: var(--dark-blue);
 }
 #search-box {
-    background-color: #F1DEDE;
+    background-color: var(--pale-pink);
 }
 #nav {
-    background-color: #05668D;
+    background-color: var(--dark-blue);
+    margin-bottom: 20px;
 }
 #nav-text {
     color: white;
