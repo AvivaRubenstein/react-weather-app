@@ -8,15 +8,13 @@ This project is a web application that allows the user to search for a city name
 
 ## Installation
 
-To install the application locally, 
+To install the application locally, you can clone this repository onto your local machine.  You will need to run an "npm install" to install the project's dependencies, and then you will be able to run the application using "npm run start", which will run the application using localhost:3000.
 
 ## Usage
 
 Visit https://avivarubenstein.github.io/react-weather-app/ to open the application in the browser.  You can search the name of a city in the search bar and hit submit to see weather data for that location.  Previously searched items will be listed below the search button, and will be clickable to do a repeat search on the forecast for that location.
 
-
-    <img width="1422" alt="weather-app-screenshot" src="https://github.com/AvivaRubenstein/react-weather-app/assets/113466697/cc52808c-2b31-4720-a1c1-741400549c47">
-
+<img width="1422" alt="weather-app-screenshot" src="https://github.com/AvivaRubenstein/react-weather-app/assets/113466697/1e393472-8096-43de-8dc4-590140bb7c48">
 
 
 ## Credits
