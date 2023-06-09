@@ -14,6 +14,9 @@
     border-radius: 20px;
     background-color: var(--mint-blue);
 }
+#today-forecast-container {
+    border: none;
+}
 .dayBoxes{
 text-align: center;
 border: 1px solid var(--medium-blue);
@@ -32,8 +35,14 @@ margin-top: 30px;
     border-radius: 30px;
     background-color: var(--dark-blue);
 }
+#search-btn:hover {
+    background-color: var(--pink-brown);
+}
 #search-box {
     background-color: var(--pale-pink);
+}
+#search-input {
+    padding-right: 20px;
 }
 #nav {
     background-color: var(--dark-blue);

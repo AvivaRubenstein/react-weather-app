@@ -54,9 +54,7 @@ function SearchCard() {
     //handleSearchHistory() adds the latest searchTerm into the searchHistory if it is not already part of the list
     function handleSearchHistory(lastSearch){
         if(!searchHistory.includes(lastSearch)){
-        let searches = searchHistory;
-        searches.push(lastSearch);
-        setSearchHistory(searches);
+        setSearchHistory([...searchHistory, lastSearch]);
         } else return;
         
     }
@@ -79,16 +77,16 @@ function SearchCard() {
                 aria-describedby="basic-addon2"
                 onChange={(e) => setSearchTerm(e.target.value)}/>
               <button type="submit" className="btn btn-primary" id="search-btn" onClick={() => getCoordinates()}>Submit</button>
-              <div id ="search-history-box">
+              </div>
+          {/* Render Search History buttons if search history exists */}
+          <div id ="search-history-box">
                 {searchHistory && searchHistory.length > 0 && 
                 searchHistory.map((pastSearch) => (
                     <button className="history-btns" key={uuid()} onClick={ ()=> handleHistoryButtons(pastSearch)}>{pastSearch}</button>
                 ))
                 }
-              </div>
             </div>
           </div>
-
         </div>
       </div>
       {weatherData.list? (
