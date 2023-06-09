@@ -30,6 +30,11 @@ margin-top: 30px;
 }
 .history-btns {
     border-radius: 30px;
+    background-color: var(--mint-blue);
+}
+.history-btns:hover {
+    color: white;
+    background-color: var(--pink-brown);
 }
 #search-btn {
     border-radius: 30px;

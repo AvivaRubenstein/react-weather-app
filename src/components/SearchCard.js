@@ -69,7 +69,7 @@ function SearchCard() {
       <div className="col-3 col-lg-3">
         <div className="card">
           <div className="card-body" id = "search-box">
-            <h3>Search for a City to see the 5 day forecast: </h3>
+            <h3>Search for a city to see the 5 day forecast: </h3>
             <br/>
             <br/>
             <div className="input-group mb-3">
