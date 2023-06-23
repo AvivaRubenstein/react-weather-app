@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import TodaysForecast from './TodaysForecast';
 import WeatherData from './WeatherData';
 import { v4 as uuid } from 'uuid';
@@ -7,7 +7,17 @@ require('../style.css');
 function SearchCard() {
   
     const [searchTerm, setSearchTerm] = useState("");
-    const [searchHistory, setSearchHistory] = useState([]);
+    const [searchHistory, setSearchHistory] = useState(() => {
+      //if searchHistory already exists in localstorage, we set the initial state of searchHistory to be the array in localstorage
+      //otherwise, the initial state should be an empty array
+      return JSON.parse(localStorage.getItem('searchHistory')) || []
+    });
+
+    //when searchHistory is changed, we set/update searchHistory in localStorage
+        useEffect(() => {
+        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+        }, [searchHistory]);
+   
     const [weatherData, setWeatherData] = useState({});
     //getCoordinates takes the user's search term and makes an API call to retrieve the longitude and latitude for that location
     //then, it calls the getForecast() function, passing in the lat and longitude - this function will retrieve the appropriate weather data
